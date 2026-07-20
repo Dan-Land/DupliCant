@@ -4,7 +4,7 @@
 import sys
 from pathlib import Path
 
-def main(dir_path):
+def main():
     """Run the application"""
     print("DupliCant is under construction.")
 
@@ -46,9 +46,9 @@ def main(dir_path):
                 file_size = int(path.stat().st_size)
                 # add file path to list associated with that size
                 if file_size in files_by_size:
-                    files_by_size[file_size].append(path)
+                    files_by_size[file_size].append(file_name)
                 else:
-                    files_by_size[file_size] = path
+                    files_by_size[file_size] = file_name
             # except file access error:
             except:
                 print(f"{file_name} requires permissions to access")
@@ -65,4 +65,4 @@ def main(dir_path):
 
 
 if __name__ == "__main__":
-    main(None)
+    main()
